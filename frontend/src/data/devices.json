@@ -1,0 +1,32 @@
+{
+  "brands": [
+    {
+      "name": "Samsung",
+      "ar": "سامسونج",
+      "models": [
+        "Galaxy S23 Ultra","Galaxy S23+","Galaxy S23","Galaxy S22 Ultra","Galaxy S22+","Galaxy S22","Galaxy S21 Ultra","Galaxy S21+","Galaxy S21","Galaxy S20 Ultra","Galaxy S20+","Galaxy S20","Galaxy Note 20 Ultra","Galaxy Note 20","Galaxy A54","Galaxy A34","Galaxy A14","Galaxy A04s","Galaxy M34","Galaxy M14","Galaxy F54","Galaxy F34","Galaxy Z Fold 5","Galaxy Z Flip 5","Galaxy S10","Galaxy S9","Galaxy S8","Galaxy S7","Galaxy S6","Galaxy Note 10","Galaxy Note 9","Galaxy A72","Galaxy A52","Galaxy A32","Galaxy A12","Galaxy J7","Galaxy J5"
+      ]
+    },
+    {
+      "name": "Xiaomi",
+      "ar": "شاومي",
+      "models": [
+        "Mi 13 Pro","Mi 13","Mi 12","Mi 11 Ultra","Mi 11","Mi 10 Pro","Redmi Note 12 Pro","Redmi Note 12","Redmi Note 11 Pro","Redmi Note 11","Redmi 11","Redmi 10","Poco F5","Poco X5 Pro","Poco X4 Pro","Poco M5","Mi Mix Fold","Mi Mix 4","Black Shark 5","Redmi 9","Redmi 8","Mi 9","Mi 8","Poco F3","Poco X3 Pro"
+      ]
+    },
+    {
+      "name": "Oppo",
+      "ar": "اوبو",
+      "models": [
+        "Oppo Find X6 Pro","Oppo Find X5 Pro","Oppo Find X5","Oppo Reno 11 Pro","Oppo Reno 11","Oppo Reno 10","Oppo Reno 8 Pro","Oppo Reno 8","Oppo A17","Oppo A57","Oppo A55","Oppo A54","Oppo A53","Oppo A16","Oppo F21 Pro","Oppo K10","Oppo K9","Oppo R17","Oppo F19"
+      ]
+    },
+    {
+      "name": "Huawei",
+      "ar": "هواوي",
+      "models": [
+        "Huawei P60 Pro","Huawei P50 Pro","Huawei P50","Huawei P40 Pro","Huawei Mate 50 Pro","Huawei Mate 40 Pro","Huawei Mate 30","Huawei Nova 11","Huawei Nova 10","Huawei Nova 9","Huawei Y9a","Huawei Y7a","Huawei P30","Huawei P20","Honor 90","Honor 80","Honor 70","Honor X9a","Mate Xs","Y6p"
+      ]
+    }
+  ]
+}

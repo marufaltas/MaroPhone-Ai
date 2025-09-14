@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary: #2a5298;
+  --accent: #ffb300;
+  --bg-card: #fff;
+  --bg-dark: #181c24;
+  --text-light: #fff;
+  --text-dark: #222;
+  --page-padding: 20px;
+}
+
+body {
+  margin: 0;
+  padding: var(--page-padding);
+  font-family: 'Cairo', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #0f4258, #1b556b);
+  color: #f3f3f3;
+  min-height: 100vh;
+  transition: background 0.5s;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.gradient-bg{
+  background-image: linear-gradient(180deg, rgba(11,37,62,0.75), rgba(6,22,34,0.75)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=80');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: var(--page-padding);
+  animation: bgMove 8s infinite alternate;
+}
+@keyframes bgMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+.header.modern-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem 1rem 2.5rem;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 2px 16px #2a529822;
+  border-radius: 0 0 32px 32px;
+}
+.site-title {
+  font-family: 'Cairo', 'Roboto', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #2a529822;
+  margin: 0;
+}
+.site-title.neon{
+  font-size:52px;
+  font-weight:900;
+  color:transparent;
+  background:linear-gradient(90deg,#8effff,#ffd65c);
+  -webkit-background-clip:text;
+  background-clip:text;
+  filter:drop-shadow(0 0 26px rgba(0,229,255,0.14));
+  text-align:center;
+}
+
+/* neon headings */
+.neon-heading, .site-title.neon { text-shadow: 0 0 12px rgba(0,229,255,0.18), 0 0 32px rgba(0,229,255,0.1); color: #fff; }
+
+.lang-select {
+  font-size: 1.1rem;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin-left: 12px;
+}
+.logout-btn {
+  margin-left: 12px;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+}
+.header-left, .header-right {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.subscribe-btn {
+  padding: 10px 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  transform: translateY(0);
+  transition: transform .2s ease;
+}
+.subscribe-btn:hover {
+  transform: translateY(-3px);
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+  padding-top: 2rem;
+}
+
+.card.modern-card {
+  background: var(--bg-card);
+  border-radius: 28px;
+  box-shadow: 0 12px 40px #2a529822;
+  padding: 2.5rem 2rem;
+  margin: 1rem 0;
+  min-width: 340px;
+  max-width: 480px;
+  animation: fadeIn 0.7s;
+  border: 2px solid #ffb30022;
+}
+.animated-card {
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+.animated-card:hover {
+  box-shadow: 0 16px 48px #ffb30055;
+  transform: translateY(-4px) scale(1.04);
+}
+
+.device-selector {
+  margin-bottom: 18px;
+}
+.device-item {
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.device-item.selected {
+  box-shadow: 0 2px 12px #ffb30099;
+  background: #ffe7b3;
+}
+
+/* Make device list text clearly visible on image background */
+.device-item, .device-item div, .device-item .title { color: #ffffff !important; }
+.device-item .brand { color: rgba(255,255,255,0.85); font-size: 12px; }
+
+.problem-textarea {
+  width: 100%;
+  min-height: 60px;
+  margin-top: 12px;
+  border-radius: 18px;
+  border: 1px solid #ccc;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 2px 8px #2a529822;
+  transition: box-shadow 0.2s;
+  background:rgba(255,255,255,0.95);
+  color:#071426;
+}
+.problem-textarea:focus {
+  box-shadow: 0 4px 16px #ffb30055;
+  outline: none;
+}
+
+.actions-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+}
+.locked-btn {
+  position: relative;
+  opacity: 0.85;
+  padding-left: 36px;
+  border-radius: 18px;
+}
+.lock-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffb300;
+  font-size: 20px;
+}
+
+.ai-reply.modern-reply {
+  background: linear-gradient(120deg,#fffbe7 0%,#e3eaff 100%);
+  border-radius: 18px;
+  padding: 1.2rem;
+  margin-top: 22px;
+  box-shadow: 0 2px 12px #2a529822;
+  animation: fadeIn 0.7s;
+  border: 1px solid #ffb30022;
+  border-radius:14px;
+  padding:18px;
+  background:#ffffff;
+  box-shadow:0 12px 36px rgba(2,6,23,0.35);
+  color:#071426;
+}
+.animated-reply {
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+.animated-reply:hover {
+  box-shadow: 0 8px 32px #ffb30055;
+  transform: scale(1.02);
+}
+
+.popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,60,114,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s;
+}
+.popup-content {
+  background: var(--bg-card);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  min-width: 320px;
+  box-shadow: 0 8px 32px #2a529822;
+  animation: fadeIn 0.7s;
+}
+
+/* subscription cards */
+.subscription-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.sub-card {
+  flex: 1;
+  min-width: 200px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 36px rgba(2,6,23,0.6);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.sub-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 64px rgba(0,229,255,0.08);
+}
+.sub-card .price {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--accent);
+}
+.sub-card .title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.sub-card .features {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+.sub-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+/* neon subscription modal styling */
+.modal .modal-content.subscription-modal{background:linear-gradient(135deg, rgba(2,12,36,0.92), rgba(4,18,45,0.94));border:1px solid rgba(0,229,255,0.14);box-shadow:0 30px 90px rgba(0,229,255,0.08);backdrop-filter: blur(6px);color:#eaffff}
+.subscription-modal .neon-heading{font-size:28px;font-weight:900;background:linear-gradient(90deg,#00e5ff,#ffb300);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 20px rgba(0,229,255,0.28));}
+.subscription-modal p.lead { color: rgba(255,255,255,0.85); margin-top: 6px; }
+
+/* CTA neon button for subscription */
+.neon-cta{background:linear-gradient(90deg,#00e5ff,#8cff6b);color:#02101a;padding:12px 28px;border-radius:20px;font-weight:900;box-shadow:0 20px 80px rgba(0,229,255,0.12);border:none}
+.neon-cta:hover{transform:scale(1.03);box-shadow:0 30px 110px rgba(0,229,255,0.18)}
+
+/* locked feature badge */
+.lock-badge{display:inline-block;background:rgba(255,255,255,0.06);padding:6px 10px;border-radius:999px;font-weight:800;color:#ffd88a;margin-left:8px}
+
+/* features grid */
+.features-grid{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap}
+.feature-card{flex:1;min-width:220px;background:rgba(255,255,255,0.04);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);}
+.feature-card h4{color:#fff;margin:0 0 8px 0}
+.feature-card p{color:rgba(255,255,255,0.9);margin:0}
+.feature-card.locked { opacity: 0.98; border: 1px dashed rgba(255,200,120,0.06); }
+
+/* ensure ai reply white box remains visually separated */
+.ai-reply.modern-reply{border-radius:14px;padding:18px;background:#ffffff;box-shadow:0 12px 36px rgba(2,6,23,0.35);color:#071426}
+
+/* bigger, bolder modern buttons across site */
+.btn { background: rgba(255,255,255,0.06); padding: 14px 20px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.06); color: #fff; font-weight: 800; font-size: 1.06rem; cursor: pointer; }
+.btn.primary { background: linear-gradient(90deg,#00e5ff,#ffb300); color: #02101a; padding: 14px 26px; font-size: 1.08rem; box-shadow: 0 12px 48px rgba(0,229,255,0.09); }
+.btn:hover { transform: translateY(-4px); }
+
+/* subtle entrance */
+.panel {
+  animation: fadeInUp .5s ease both;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ensure modal content for subscriptions looks great */
+.popup-plans {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ensure modal overlay appears above everything */
+.modal {
+  position: fixed;
+ 
+  top: 56px;
+  background: linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+  padding: 8px;
+  border-radius: 10px;
+  min-width: 220px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  z-index: 10000;
+}
+.account-dropdown button {
+  width: 100%;
+  text-align: right;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+}
+
+/* response text contrast */
+.response {
+  color: #07c1eb;
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:28px;
+  background:rgba(0,0,0,0.7);
+  color:#fff;
+  padding:12px 18px;
+  border-radius:12px;
+  z-index:11000;
+  display:none
+}
+.toast.show{
+  display:block
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .card, .popup-content {
+    padding: 1rem;
+    min-width: 95vw;
+  }
+  .main-content {
+    padding-top: 0.5rem;
+  }
+  .header.modern-header {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+}
+@media(max-width:720px){
+  :root{--page-padding:12px}
+  .site-title{font-size:28px}
+  .modal .modal-content{width:94%}
+}
+@media (max-width: 720px) {
+  .btn { font-size: 1rem; padding: 12px 14px; }
+  .features-grid { flex-direction: column; }
+}
+
+/* make select options readable and show selected with glow */
+select { color: #000000; font-weight:700 }
+select option { background: #092433; color: #fff }
+select:focus { outline: none; box-shadow: 0 8px 36px rgba(0,229,255,0.08) }
+
+/* selected device highlight */
+.device-item.selected { background: linear-gradient(90deg, rgba(0,229,255,0.06), rgba(255,179,0,0.03)); box-shadow: 0 12px 40px rgba(0,229,255,0.06); }
+
+/* make main titles glow white */
+h2 { color: #fff; text-shadow: 0 0 12px rgba(255,255,255,0.06) }
+
+.account-wrap{display:flex;gap:12px;align-items:center}
+.account-btn{background:transparent;border:none;color:#eaffff;font-weight:800;padding:8px 12px;border-radius:10px}
+.account-dropdown{position:absolute;right:10px;top:78px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:8px;border-radius:12px;min-width:220px;box-shadow:0 10px 40px rgba(0,0,0,0.6);}
+
+/* Subscription modal enhancements */
+.subscription-modal { position: relative; padding: 22px; border-radius: 18px; overflow: hidden; }
+.subscription-modal .close-x { position: absolute; right: 12px; top: 12px; background: rgba(255,255,255,0.06); border: none; color: #fff; width:36px;height:36px;border-radius:10px;font-weight:900;cursor:pointer }
+
+.subscription-grid { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 16px; }
+.sub-card { flex: 1; min-width: 220px; padding: 18px; border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); box-shadow: 0 18px 60px rgba(2,6,23,0.45); display:flex;flex-direction:column;justify-content:space-between }
+.sub-card .price-badge { background: linear-gradient(90deg,#00e5ff,#ffd65c); color:#02101a;font-weight:900;padding:8px 12px;border-radius:12px;display:inline-block }
+.sub-card .title { color:#fff;font-weight:800;font-size:18px;margin-bottom:6px }
+.sub-card .features { margin-top:12px;color:rgba(255,255,255,0.9);font-size:14px }
+.sub-card .sub-actions { display:flex;justify-content:flex-end;margin-top:14px }
+
+/* highlight popular */
+.sub-card.popular{border:1px solid rgba(255,217,102,0.22);box-shadow:0 26px 80px rgba(255,190,40,0.08)}
+
+/* make modal body scrollable on small screens */
+.subscription-modal .modal-body{max-height:60vh;overflow:auto;padding-right:6px}
+
+/* Toast: horizontal scroll on mobile and small progress indicator */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;background:rgba(0,0,0,0.7);color:#fff;padding:10px 14px;border-radius:12px;z-index:11000;display:none;max-width:min(800px,calc(100% - 40px));}
+.toast.show{display:block}
+@media(max-width:600px){
+  .toast{left:8px;right:8px;transform:none;display:flex;align-items:center;gap:8px;overflow-x:auto}
+  .toast::-webkit-scrollbar{height:6px}
+  .toast::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);border-radius:6px}
+  .toast .toast-text{white-space:nowrap}
+  .toast .toast-progress{height:4px;background:rgba(255,255,255,0.12);width:100%;border-radius:4px;overflow:hidden;margin-left:8px}
+  .toast .toast-progress > i{display:block;height:100%;width:40%;background:linear-gradient(90deg,#00e5ff,#ffb300);animation:progress 3s linear forwards}
+}
+@keyframes progress{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+
+/* Ensure modal responsive spacing */
+@media(max-width:720px){
+  .subscription-grid{flex-direction:column}
+  .sub-card{min-width:unset}
+}
