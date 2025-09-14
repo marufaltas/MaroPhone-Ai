@@ -81,12 +81,15 @@ function App() {
                 <button className="account-btn" onClick={() => setShowAccountMenu(s => !s)}>{user.name || user.email}</button>
                 <button className="btn" onClick={() => setShowSub(true)}>{isSubscribed ? 'مشترك' : 'غير مشترك'}</button>
                 {showAccountMenu && (
-                  <div className="account-dropdown">
-                    <div style={{padding:8}}><strong>الخطة الحالية:</strong> {user.plan || 'غير مشترك'}</div>
-                    <button onClick={() => { showToast('ميزة تغيير كلمة المرور مؤقتة'); setShowAccountMenu(false); }}>تغيير كلمة المرور</button>
-                    <button onClick={() => { showToast('أضف صورة (مؤقت)'); setShowAccountMenu(false); }}>إضافة صورة</button>
-                    <button onClick={() => { showToast('أضف رقم الهاتف (مؤقت)'); setShowAccountMenu(false); }}>إضافة رقم الهاتف</button>
-                    <button onClick={handleLogout}>تسجيل الخروج</button>
+                  <div className="account-toast">
+                    <button className="close-x" onClick={() => setShowAccountMenu(false)}>✕</button>
+                    <div style={{padding:8}}><strong style={{display:'block',marginBottom:6}}>الخطة الحالية:</strong><div style={{color:'#fff',fontWeight:700}}>{user.plan || 'غير مشترك'}</div></div>
+                    <div style={{display:'flex',flexDirection:'column',gap:8,marginTop:8,padding:'0 8px 12px 8px'}}>
+                      <button className="btn" onClick={() => { showToast('ميزة تغيير كلمة المرور مؤقتة'); setShowAccountMenu(false); }}>تغيير كلمة المرور</button>
+                      <button className="btn" onClick={() => { showToast('أضف صورة (مؤقت)'); setShowAccountMenu(false); }}>إضافة صورة</button>
+                      <button className="btn" onClick={() => { showToast('أضف رقم الهاتف (مؤقت)'); setShowAccountMenu(false); }}>إضافة رقم الهاتف</button>
+                      <button className="btn" onClick={() => { handleLogout(); setShowAccountMenu(false); }}>تسجيل الخروج</button>
+                    </div>
                   </div>
                 )}
               </div>
